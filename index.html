@@ -1,88 +1,25 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Ping-Pong</title>
+  <title>Ping Pong</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>PING PONG</h1>
-  <canvas id="gc" width="640" height="480"></canvas>
-  <script>
-  p1y=p2y=40;
-  pt=10;
-  ph=100;
-  bx=by=50;
-  bd=6;
-  xv=yv=4;
-  score1=score2=0;
-  ais=2;
-
-  window.onload=function(){
-    c=document.getElementById('gc');
-    cc=c.getContecy('2d');
-    setInterval(update,1000/30);
-    c.addEventListener('mousemove',function(e) {
-      p1y = e.clientY-ph/2;
-    });
-  }
-
-  function reset() {
-    bx=c.width/2;
-    by=c.height/2;
-    xv=-xv;
-    yv=3;
-  }
-
-  function update() {
-    bx+=xv;
-    by+=yv;
-    if(by<0 && yv<0) {
-      yv=-yv;
-    }
-    if(by>c.height && yv>0) {
-      yv=-yv;
-    }
-    if(bx<0) {
-      if(by>p1y && by<p1y+ph) {
-        xv = -xv;
-        dy = dy*0.3;
-      } else {
-        score2++;
-        reset();
-      }
-    }
-
-    if(bx>c.width) {
-      if(by>p2y && by<p2y+ph) {
-        xv = -xv;
-        dy=by-(p2y+ph/2);
-        dy = dy*0.3;
-      } else {
-        score1++;
-        reset();
-      }
-    }
-
-    if(p2y+ph/2<by){
-      p2y+=ais;
-    } else {
-      p2y-=ais;
-    }
-
-    cc.fillStyle = 'black';
-    cc.fillRect(0,0,c.width,c.height);
-    cc.fillStyle = "white";
-    cc.fillRect(0,py1,pt,ph);
-    cc.fillRect(c.width-pt,p2y,pt,ph);
-    cc.fillRect(bx-bd/2,by-bd/2,bd,bd);
-    cc.fillText(score1,100,100);
-    cc.fillText(score2,c.width-100,100);
-
-  }
-
-  </script>
-
+  <h1>Ping Pong</h1>
+  <canvas id="gameCanvas" width="800" height="600"></canvas>
+  <div id="sb">
+    <h1>SCOREBOARD</h1>
+    <ul>
+      <li id="player_1">Player 1</li>
+      <li id="player_2"> Player 2</li>
+      <li>Player 3</li>
+    </ul>
+    <button>Retrieve Scores</button>
+  </div>
+</head>
 </body>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="main.js"></script>
 </html>
