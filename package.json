@@ -7,9 +7,6 @@
   "scripts": {
     "start": "node ./app"
   },
-  "engines": {
-      "node":4.2.4
-    },
   "dependencies": {
     "bcrypt": "^0.8.7",
     "body-parser": "^1.13.3",
