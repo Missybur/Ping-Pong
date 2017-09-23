@@ -4,6 +4,8 @@ var mongoose = require('mongoose');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 var app = express();
+var http = require('http');
+var port = 3000;
 // var port = process.env.PORT || 1337;
 
 // mongodb connection
