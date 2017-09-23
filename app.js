@@ -14,6 +14,8 @@ var db = mongoose.connection;
 // mongo error
 db.on('error', console.error.bind(console, 'connection error:'));
 
+var Post = mongoose.model('Post', {title: String });
+
 // use sessions for tracking logins
 app.use(session({
   secret: 'treehouse loves you',
