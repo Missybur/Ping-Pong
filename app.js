@@ -18,7 +18,7 @@ db.on('error', console.error.bind(console, 'connection error:'));
 
 // use sessions for tracking logins
 app.use(session({
-  secret: 'treehouse loves you',
+  secret: 'pingpong yay',
   resave: true,
   saveUninitialized: false,
   store: new MongoStore({
