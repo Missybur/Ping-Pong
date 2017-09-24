@@ -12,6 +12,10 @@ var UserSchema = new mongoose.Schema({
       required: true,
       trim: true
     },
+    pingPongScore: {
+      type: String,
+      trim: true
+    },
     password: {
       type: String,
       required: true
