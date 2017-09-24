@@ -109,9 +109,9 @@ router.get('/about', function(req, res, next) {
   return res.render('about', { title: 'About' });
 });
 
-// GET /contact
+// GET /pingpong
 router.get('/contact', function(req, res, next) {
-  return res.render('contact', { title: 'Contact' });
+  return res.render('pingpong', { title: 'Ping Pong' });
 });
 
 

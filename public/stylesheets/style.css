@@ -1,11 +1,50 @@
-/* Ping Pong Canvas */
+/* SVG Ping */
 
 body {
-  background: #283048;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #859398, #283048);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #859398, #283048); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+    margin: 0px;
+  background: #000;
 }
+
+#background {
+    fill: #222;
+}
+
+#field {
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    position : absolute;
+    display: inline-block;
+    cursor: none;
+      fill: white;
+}
+
+.score {
+    font-family : Impact, Charcoal, sans-serif;
+    text-anchor: middle;
+    font-size : 30pt;
+      fill: white;
+}
+
+/* Ping Pong Canvas */
+
+
+/*div#canvasContainer {
+  border: 2px solid red;
+  position: fixed;
+  width: 100%;
+}*/
+
+/*#left-element {
+  position: absolute;
+  display: inline-block;
+}
+
+#right-element {
+  position: absolute;
+  display: inline-block;
+}*/
 
 #canvasDiv {
   float: left;
@@ -22,15 +61,15 @@ h1 {
 }
 
 #gc {
-  float: left;
 }
 
-#sb {
+/*#sb {
   float: right;
-  margin-right: 50px;
+  widows: 35%;
+  position: absolute;
   border: 2px solid;
   padding: 20px;
-}
+}*/
 
 /* Base Styles */
 
