@@ -5,7 +5,7 @@ var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 var app = express();
 
-// var port = process.env.PORT || 1337;
+var port = process.env.PORT || 3000;
 
 // mongodb connection
 mongoose.connect("mongodb://localhost:27017/pingpong");
