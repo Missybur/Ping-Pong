@@ -1,39 +1,19 @@
-//- extends layout
-nav.navbar.navbar-fixed-top.navbar-dark.bg-inverse
-  button.navbar-toggler.hidden-md-up.pull-xs-right(type='button',  data-toggle='collapse', data-target='#navbar') &#x2630;
-  #navbar.navbar-nav.collapse.navbar-toggleable-sm
-    .container
-      a.navbar-brand(href='/')
-        i.icn-logo.material-icons bookmark_border
-        | PING PONG
-      .nav-items.clearfix
-        if !currentUser
-          a.nav-item.nav-link(href='register') Sign Up
-        a.nav-item.nav-link(href='about') About
-        a.nav-item.nav-link(href='contact') Contact
-        a.nav-item.nav-link(href='profile') My Profile
-
-      if currentUser
-        div
-          img.avatar.img-circle.hidden-xs-down(src='/images/avatar.png', alt='avatar')
-          a.btn.btn-light.pull-md-right(href='/logout') Log out
-      else
-        a.btn.btn-info.pull-md-right(href='login') Login
+extends layout
 
 block content
   .main.container
     .row
       .col-md-8.col-md-offset-2
         h1.display-4.m-b-2 Ping Pong
-        div(float="left", border="2px solid red")
-        canvas#gameCanvas(float='left', width='800', height='600')
-        div#sb(float="right")
-        h1#sb SCOREBOARD
-        ul
-          li Player 1:
-            span#player_1  0
-          li Player 2:
-            span#player_2  0
+        div#canvasDiv(float="left", border="2px solid red")
+          canvas#gameCanvas(float='left', width='800', height='600')
+          div#sb(float="right")
+            h1#sb SCOREBOARD
+            ul
+              li Player 1:
+                span#player_1  0
+              li Player 2:
+                span#player_2  0
 
         script.
           var count1_final = 0;

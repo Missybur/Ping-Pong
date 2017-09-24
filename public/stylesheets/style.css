@@ -7,6 +7,10 @@ background: linear-gradient(to right, #859398, #283048); /* W3C, IE 10+/ Edge, F
 
 }
 
+#canvasDiv {
+  float: left;
+}
+
 #gameCanvas {
   width: 800;
   height: 600;
