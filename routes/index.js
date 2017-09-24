@@ -15,6 +15,19 @@ router.get('/profile', mid.requiresLogin, function(req, res, next) {
       });
 });
 
+// GET /pingPongScore
+
+// router.get('/pingpong', mid.requiresLogin, function(req, res, next) {
+//   User.findById(req.session.userId)
+//       .exec(function (error, user) {
+//         if (error) {
+//           return next(error);
+//         } else {
+//           return res.render('pingPongScore', { title: 'pingPongScore', name: user.name, pingPongScore: user.pingPongScore });
+//         }
+//       });
+// });
+
 // GET /logout
 router.get('/logout', function(req, res, next) {
   if (req.session) {
@@ -31,6 +44,10 @@ router.get('/logout', function(req, res, next) {
 
 // GET /login
 router.get('/login', mid.loggedOut, function(req, res, next) {
+  return res.render('login', { title: 'Log In'});
+});
+
+router.get('/', mid.loggedOut, function(req, res, next) {
   return res.render('login', { title: 'Log In'});
 });
 
@@ -58,6 +75,7 @@ router.post('/login', function(req, res, next) {
 router.get('/register', mid.loggedOut, function(req, res, next) {
   return res.render('register', { title: 'Sign Up' });
 });
+
 
 // POST /register
 router.post('/register', function(req, res, next) {
@@ -110,10 +128,8 @@ router.get('/about', function(req, res, next) {
 });
 
 // GET /pingpong
-router.get('/pingpong', function(req, res, next) {
+router.get('/pingpong', mid.requiresLogin, function(req, res, next) {
   return res.render('pingpong', { title: 'Ping Pong' });
 });
-
-
 
 module.exports = router;

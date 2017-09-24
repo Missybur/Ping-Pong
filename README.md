@@ -1,11 +1,16 @@
-Missy App
-Installation:
+#Missy Ping Pong App
+
+This is a Ping Pong app with user authentication
+
+Built with Node, Express and MongoDB
+
+##Installation:
 
 - run 'npm install'
 - run app using 'npm start'
-OR
-- run 'npm install nodeman'
-- run 'nodemon app.js'
+
+
+Notes //
 
 Database:
 
