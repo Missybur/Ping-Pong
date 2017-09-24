@@ -110,7 +110,7 @@ router.get('/about', function(req, res, next) {
 });
 
 // GET /pingpong
-router.get('/contact', function(req, res, next) {
+router.get('/pingpong', function(req, res, next) {
   return res.render('pingpong', { title: 'Ping Pong' });
 });
 
