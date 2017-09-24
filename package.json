@@ -1,8 +1,8 @@
 {
-  "name": "treehouse-express-auth",
+  "name": "ping-pong-app",
   "version": "1.0.0",
-  "description": "A project for learning how to add authentication to a web application.",
-  "author": "Treehouse Island, Inc.",
+  "description": "A fun game to play ping pong",
+  "author": "Missy Bur",
   "private": true,
   "scripts": {
     "start": "node ./app"
