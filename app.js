@@ -11,7 +11,7 @@ mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/foobar');
 
 // // mongodb connection
 // mongoose.connect("mongodb://localhost:27017/pingpong");
-// var db = mongoose.connection;
+var db = mongoose.connection;
 // // mongo error
 // db.on('error', console.error.bind(console, 'connection error:'));
 
