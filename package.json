@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "start": "node ./app",
-    "test": "mocha"
+    "test": "node_modules/mocha/bin/mocha ./tests"
   },
   "dependencies": {
     "bcrypt": "^0.8.7",
@@ -22,7 +22,9 @@
   "main": "main.js",
   "devDependencies": {
     "chai": "^4.1.2",
-    "mocha": "^3.5.3"
+    "mocha": "^3.5.3",
+    "superagent": "^3.6.0",
+    "supertest": "^3.0.0"
   },
   "repository": {
     "type": "git",
