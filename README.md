@@ -9,6 +9,10 @@ Built with Node, Express and MongoDB
 - run 'npm install'
 - run app using 'npm start'
 
+##Testing
+
+- run npm test
+
 
 Notes //
 
