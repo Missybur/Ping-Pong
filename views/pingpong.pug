@@ -4,14 +4,15 @@ block content
   .main.container
     h1.display-4.m-b-2 Ping Pong
     div#canvasContainer
-      div#left-element
+      div
         canvas#gameCanvas(width='800', height='600')
-      div#right-element
+      div#scoreboard
         h1 SCOREBOARD
         ul
         li Player 1:
           span#player_1  0
         li Player 2:
+          span#player_2  0
 
         script.
           var count1_final = 0;

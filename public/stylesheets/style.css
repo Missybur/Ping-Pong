@@ -1,8 +1,14 @@
-/* SVG Ping */
+/* Ping */
 
 body {
-    margin: 0px;
+  margin: 0px;
   background: #000;
+}
+
+#scoreboard {
+  border: 2px solid white;
+  margin-top: 10px;
+  padding: 10px;
 }
 
 #background {
@@ -17,34 +23,16 @@ body {
     position : absolute;
     display: inline-block;
     cursor: none;
-      fill: white;
+    fill: white;
 }
 
 .score {
     font-family : Impact, Charcoal, sans-serif;
     text-anchor: middle;
     font-size : 30pt;
-      fill: white;
+    fill: white;
 }
 
-/* Ping Pong Canvas */
-
-
-/*div#canvasContainer {
-  border: 2px solid red;
-  position: fixed;
-  width: 100%;
-}*/
-
-/*#left-element {
-  position: absolute;
-  display: inline-block;
-}
-
-#right-element {
-  position: absolute;
-  display: inline-block;
-}*/
 
 #canvasDiv {
   float: left;
@@ -60,16 +48,6 @@ h1 {
   text-align: center;
 }
 
-#gc {
-}
-
-/*#sb {
-  float: right;
-  widows: 35%;
-  position: absolute;
-  border: 2px solid;
-  padding: 20px;
-}*/
 
 /* Base Styles */
 
