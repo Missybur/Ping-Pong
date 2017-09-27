@@ -8,13 +8,10 @@ block content
         canvas#gameCanvas(width='800', height='600')
       div#right-element
         h1 SCOREBOARD
-        h2.pingPongScore My Ping Pong Score :
-          | #{pingPongScore}
         ul
         li Player 1:
           span#player_1  0
         li Player 2:
-          span#player_2  0
 
         script.
           var count1_final = 0;
@@ -167,6 +164,43 @@ block content
           function colorRect(leftX,topY, width,height, drawColor) {
           canvasContext.fillStyle = drawColor;
           canvasContext.fillRect(leftX,topY, width,height);
+          }
+          function getSuccessOutput() {
+          $.ajax({
+          url:'/echo/js/?js=hello%20world!',
+          complete: function (response) {
+          $('#output').html(response.responseText);
+          },
+          error: function () {
+          $('#output').html('Bummer: there was an error!');
+          },
+          });
+          return false;
+          }
+          // handles the click event, sends the query
+          function getFailOutput() {
+          $.ajax({
+          url:'myAjax.php',
+          success: function (response) {
+          console.log(data, response);
+          $('#output').html(response);
+          },
+          error: function () {
+          $('#output').html('Bummer: there was an error!');
+          },
+          });
+          return false;
+          }
+          var xhr = new XMLHttpRequest();
+          xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4) {
+          document.getElementById('ajax').innerHTML = xhr.responseText;
+          }
+          };
+          xhr.open('GET', 'sidebar.pug');
+          function sendAJAX() {
+          xhr.send();
+          document.getElementById('load').style.display = 'none';
           }
 
 

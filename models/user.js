@@ -13,14 +13,15 @@ var UserSchema = new mongoose.Schema({
       trim: true
     },
     pingPongScore: {
-      type: String,
-      trim: true
+      type: Number,
+      default: 0
     },
     password: {
       type: String,
       required: true
     }
 });
+
 // authenticate input against database documents
 UserSchema.statics.authenticate = function(email, password, callback) {
   User.findOne({ email: email })
@@ -55,3 +56,4 @@ UserSchema.pre('save', function(next) {
 
 var User = mongoose.model('User', UserSchema);
 module.exports = User;
+

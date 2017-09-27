@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var User = require('../models/user');
 var mid = require('../middleware');
+var UserScore =
 
 // GET /profile
 router.get('/profile', mid.requiresLogin, function(req, res, next) {
@@ -10,23 +11,11 @@ router.get('/profile', mid.requiresLogin, function(req, res, next) {
         if (error) {
           return next(error);
         } else {
-          return res.render('profile', { title: 'Profile', name: user.name, pingPongScore: user.pingPongScore });
+          return res.render('profile', { title: 'Profile', name: user.name });
         }
       });
 });
 
-// GET /pingPongScore
-
-// router.get('/pingpong', mid.requiresLogin, function(req, res, next) {
-//   User.findById(req.session.userId)
-//       .exec(function (error, user) {
-//         if (error) {
-//           return next(error);
-//         } else {
-//           return res.render('pingPongScore', { title: 'pingPongScore', name: user.name, pingPongScore: user.pingPongScore });
-//         }
-//       });
-// });
 
 // GET /logout
 router.get('/logout', function(req, res, next) {
@@ -81,7 +70,6 @@ router.get('/register', mid.loggedOut, function(req, res, next) {
 router.post('/register', function(req, res, next) {
   if (req.body.email &&
     req.body.name &&
-    req.body.pingPongScore &&
     req.body.password &&
     req.body.confirmPassword) {
 
