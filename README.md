@@ -4,12 +4,12 @@ This is a Ping Pong app with user authentication
 
 Built with Node, Express and MongoDB
 
-##Installation:
+## Installation:
 
 - run 'npm install'
 - run app using 'npm start'
 
-##Testing
+## Testing
 
 - run 'npm test'
 
