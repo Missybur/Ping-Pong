@@ -66,15 +66,23 @@ block content
           });
           }
           function ballReset() {
-          var count1_final = 0;
-          var count2_final = 0;
           if(player1Score >= WINNING_SCORE ||
           player2Score >= WINNING_SCORE) {
           showingWinScreen = true;
+          addFinalScore()
           }
           ballSpeedX = -ballSpeedX;
           ballX = canvas.width/2;
           ballY = canvas.height/2;
+          }
+          function addFinalScore() {
+          if(player1Score >= WINNING_SCORE) {
+          count1_final++;
+          document.getElementById("player_1").innerHTML = " " +count1_final;
+          } else {
+          count2_final++;
+          document.getElementById("player_2").innerHTML = " " +count2_final;
+          }
           }
           function computerMovement() {
           var paddle2YCenter = paddle2Y + (PADDLE_HEIGHT/2);
@@ -134,21 +142,8 @@ block content
           canvasContext.fillStyle = 'white';
           if(player1Score >= WINNING_SCORE) {
           canvasContext.fillText("Player 1 Won", 350, 200);
-          // var count1 = 0;
-          // var count1_final = count1 + 1;
-          // player1final_score++;
-          count1_final++;
-          document.getElementById("player_1").innerHTML = count1_final;
-          console.log(count1_final)
           } else if(player2Score >= WINNING_SCORE) {
           canvasContext.fillText("Player 2 Won", 350, 200);
-          // var count2 = 0;
-          // var count2_final = count2 + 1;
-          // player2final_score++;
-          count2_final++;
-          // console.log(player2final_score)
-          document.getElementById("player_2").innerHTML = count2_final;
-          console.log(count2_final)
           }
           canvasContext.fillText("Play Again", 350, 500);
           return;

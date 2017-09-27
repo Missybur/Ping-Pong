@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "start": "node ./app",
-    "test": "node_modules/mocha/bin/mocha ./tests"
+    "test": "mocha"
   },
   "dependencies": {
     "bcrypt": "^0.8.7",
