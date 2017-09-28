@@ -2,7 +2,7 @@ extends layout
 
 block content
   .main.container
-    h1.display-4.m-b-2 Ping Pong
+    h1.display-4.m-b-2 Ping Pong Game
     div#canvasContainer
       div
         canvas#gameCanvas(width='800', height='600')
@@ -25,7 +25,7 @@ block content
           var ballSpeedY = 4;
           var player1Score = 0;
           var player2Score = 0;
-          const WINNING_SCORE = 2;
+          const WINNING_SCORE = 3;
           var showingWinScreen = false;
           var paddle1Y = 250;
           var paddle2Y = 250;
