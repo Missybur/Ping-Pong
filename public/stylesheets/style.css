@@ -6,9 +6,28 @@ body {
 }
 
 #scoreboard {
+  display: inline-block;
+  text-align: left;
+  float: left;
   border: 2px solid white;
   margin-top: 10px;
+  margin-bottom: 10px;
   padding: 10px;
+  max-width: 20%;
+}
+
+#sbTitle {
+  font-size: 28px;
+}
+
+#canvasScoreboardContainer {
+  display: inline-block;
+  float: right;
+  text-align: left;
+  max-width: 75%;
+  margin-right: 5px;
+  margin-left: 5px;
+  border: 2px solid white;
 }
 
 #background {

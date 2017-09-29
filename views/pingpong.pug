@@ -2,17 +2,16 @@ extends layout
 
 block content
   .main.container
-    h1.display-4.m-b-2 Ping Pong Game
-    div#canvasContainer
-      div
-        canvas#gameCanvas(width='800', height='600')
+    div.container
       div#scoreboard
-        h1 SCOREBOARD
-        ul
-        li Player 1:
-          span#player_1  0
-        li Player 2:
-          span#player_2  0
+          h1#sbTitle SCOREBOARD
+          ul
+          li Player 1:
+            span#player_1  0
+          li Player 2:
+            span#player_2  0
+      div#canvasScoreboardContainer
+        canvas#gameCanvas(width='800', height='600')
 
         script.
           var count1_final = 0;
@@ -25,7 +24,7 @@ block content
           var ballSpeedY = 4;
           var player1Score = 0;
           var player2Score = 0;
-          const WINNING_SCORE = 3;
+          const WINNING_SCORE = 1;
           var showingWinScreen = false;
           var paddle1Y = 250;
           var paddle2Y = 250;
