@@ -1,6 +1,6 @@
-# Missy Ping Pong App
+# Missy Ping Pong Game
 
-This is a Ping Pong app with user authentication built with Node, Express and MongoDB
+This is a Ping Pong game including user authentication built with Node, Express and MongoDB
 
 ## Installation:
 
