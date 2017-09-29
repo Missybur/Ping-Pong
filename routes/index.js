@@ -11,7 +11,7 @@ router.get('/profile', mid.requiresLogin, function(req, res, next) {
         if (error) {
           return next(error);
         } else {
-          return res.render('profile', { title: 'Profile', name: user.name });
+          return res.render('profile', { title: 'Profile', name: user.name, pingPongScore: user.pingPongScore });
         }
       });
 });
@@ -70,6 +70,7 @@ router.get('/register', mid.loggedOut, function(req, res, next) {
 router.post('/register', function(req, res, next) {
   if (req.body.email &&
     req.body.name &&
+    req.body.pingPongScore &&
     req.body.password &&
     req.body.confirmPassword) {
 

@@ -3,15 +3,19 @@ extends layout
 block content
   .main.container
     div.container
-      div#scoreboard
-          h1#sbTitle SCOREBOARD
-          ul
-          li Player 1:
-            span#player_1  0
-          li Player 2:
-            span#player_2  0
-      div#canvasScoreboardContainer
+    div#scoreboard
+        h1#sb SCOREBOARD
+        ul
+        li Player 1:
+          span#player_1  0
+        li Player 2:
+          span#player_2  0
+    h1#winnerTitle
+      span#winner1
+    div#canvasScoreboardContainer
+      div
         canvas#gameCanvas(width='800', height='600')
+
 
         script.
           var count1_final = 0;
@@ -76,9 +80,11 @@ block content
           if(player1Score >= WINNING_SCORE) {
           count1_final++;
           document.getElementById("player_1").innerHTML = " " +count1_final;
+          document.getElementById("winner1").innerHTML = "Player 1 Wins! "
           } else {
           count2_final++;
           document.getElementById("player_2").innerHTML = " " +count2_final;
+          document.getElementById("winner1").innerHTML = "Player 2 Wins! "
           }
           }
           function computerMovement() {
@@ -128,6 +134,7 @@ block content
           }
           }
           function drawNet() {
+          document.getElementById("winner1").innerHTML = " "
           for(var i=0;i<canvas.height;i+=40) {
           colorRect(canvas.width/2-1,i,2,20,'white');
           }
@@ -138,9 +145,9 @@ block content
           if(showingWinScreen) {
           canvasContext.fillStyle = 'white';
           if(player1Score >= WINNING_SCORE) {
-          canvasContext.fillText("Player 1 Won", 350, 200);
+          //- canvasContext.fillText("Player 1 Won", 350, 200);
           } else if(player2Score >= WINNING_SCORE) {
-          canvasContext.fillText("Player 2 Won", 350, 200);
+          //- canvasContext.fillText("Player 2 Won", 350, 200);
           }
           canvasContext.fillText("Play Again", 350, 500);
           return;

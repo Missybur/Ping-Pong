@@ -13,11 +13,18 @@ body {
   margin-top: 10px;
   margin-bottom: 10px;
   padding: 10px;
-  max-width: 20%;
+  max-width: 25%;
+  height: 300px;
 }
 
-#sbTitle {
-  font-size: 28px;
+#winnerTitle {
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#sb {
+  font-size: 22px;
 }
 
 #canvasScoreboardContainer {
