@@ -6,15 +6,20 @@ block content
     div#scoreboard
         h1#sb SCOREBOARD
         ul
-        li Player 1:
+        li #{name} :
           span#player_1  0
         li Player 2:
           span#player_2  0
+        h4.pingPongScore #{name} Previous Ping Pong Score :
+          | #{pingPongScore}
     h1#winnerTitle
       span#winner1
     div#canvasScoreboardContainer
       div
         canvas#gameCanvas(width='800', height='600')
+
+
+
 
 
         script.
@@ -80,7 +85,7 @@ block content
           if(player1Score >= WINNING_SCORE) {
           count1_final++;
           document.getElementById("player_1").innerHTML = " " +count1_final;
-          document.getElementById("winner1").innerHTML = "Player 1 Wins! "
+          document.getElementById("winner1").innerHTML = "#{name} Wins! "
           } else {
           count2_final++;
           document.getElementById("player_2").innerHTML = " " +count2_final;

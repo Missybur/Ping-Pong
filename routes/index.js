@@ -16,6 +16,18 @@ router.get('/profile', mid.requiresLogin, function(req, res, next) {
       });
 });
 
+// GET /pingpong
+router.get('/pingpong', function(req, res, next) {
+  User.findById(req.session.userId)
+      .exec(function (error, user) {
+        if (error) {
+          return next(error);
+        } else {
+          return res.render('pingpong', { title: 'Profile', name: user.name, pingPongScore: user.pingPongScore });
+        }
+      });
+});
+
 
 // GET /logout
 router.get('/logout', function(req, res, next) {
