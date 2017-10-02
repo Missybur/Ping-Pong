@@ -17,7 +17,7 @@ router.get('/profile', mid.requiresLogin, function(req, res, next) {
 });
 
 // GET /pingpong
-router.get('/pingpong', function(req, res, next) {
+router.get('/pingpong', mid.requiresLogin, function(req, res, next) {
   User.findById(req.session.userId)
       .exec(function (error, user) {
         if (error) {
