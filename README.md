@@ -6,6 +6,7 @@ This is a Ping Pong game including user authentication built with Node, Express 
 
 - run 'npm install'
 - run app using 'npm start'
+- Have 'mongod' running separately in a terminal
 
 ## Testing
 
